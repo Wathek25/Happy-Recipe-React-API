@@ -18,7 +18,7 @@ function App() {
         <Route path="/meals/meal/:idMeal" component={MealC} />
         <Route path="/about" component={About} />
         <Route path="/categories/:category" component={oneCategory} />
-        <Route path="/*" component={Error} />
+        <Route path="/*" component={Home} />
       </Switch>
       <Footer />
     </div>

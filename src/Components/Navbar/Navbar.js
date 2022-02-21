@@ -9,9 +9,11 @@ const NavbarC = () => {
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="/" className="text-warning">
-            <img src={icon} width="40px" height="40px" alt="nav_icon" />
-            Happy Recipe
+          <Navbar.Brand className="text-warning">
+            <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+              <img src={icon} width="40px" height="40px" alt="nav_icon" />
+              Happy Recipe
+            </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
