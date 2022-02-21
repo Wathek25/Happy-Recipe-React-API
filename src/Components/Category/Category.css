@@ -1,0 +1,16 @@
+.category h4 {
+  color: rgb(0, 0, 0);
+  text-decoration: underline orange;
+  margin-top: 40px;
+}
+
+.category img {
+  width: 200px;
+  height: 200px;
+}
+
+.category button {
+  margin-bottom: 20px;
+  margin-left: 40px;
+  background-color: #fdd661;
+}

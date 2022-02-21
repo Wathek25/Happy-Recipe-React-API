@@ -1,0 +1,18 @@
+.meals_card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.meals_card .button {
+  width: 250px;
+  background-color: burlywood;
+  border: 1px;
+}
+
+.meals_card h4 {
+  color: rgb(0, 0, 0);
+  text-decoration: underline orange;
+  margin-top: 40px;
+}

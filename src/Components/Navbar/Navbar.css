@@ -1,0 +1,13 @@
+.nav_links {
+  margin: 7px;
+  color: white;
+  text-decoration: none;
+}
+
+.nav_links:hover {
+  color: burlywood;
+}
+
+.text-warning img {
+  margin-right: 8px;
+}

@@ -1,0 +1,12 @@
+.search {
+  margin-left: 900px;
+  width: 40%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.meals_list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

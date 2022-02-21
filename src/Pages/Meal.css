@@ -1,0 +1,15 @@
+.one_meal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.onemeal_img {
+  margin-right: 50px;
+  margin-left: 50px;
+  margin-bottom: 550px;
+}
+
+.one_meal h4 {
+  color: rgb(238, 145, 23);
+}

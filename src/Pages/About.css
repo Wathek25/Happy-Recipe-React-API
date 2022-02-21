@@ -1,0 +1,23 @@
+.about h1 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: bold;
+  text-decoration: underline orange;
+  font-family: cursive;
+}
+.about_desc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about_img {
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.about_desc p {
+  font-weight: 700;
+  font-size: 30px;
+  font-family: cursive;
+}
