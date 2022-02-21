@@ -18,5 +18,7 @@
 .homeCat {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: left;
+  margin-left: 55px;
+  margin-top: 50px;
 }
