@@ -28,9 +28,9 @@ const MealsC = () => {
     }
   };
 
-  const searchMealHandler = useEffect(() => {
-    getMeals(searchTerm);
-  }, [searchTerm, getMeals]);
+  // const searchMealHandler = useEffect(() => {
+  //   getMeals(searchTerm);
+  // }, [searchTerm, getMeals]);
 
   return (
     <div>

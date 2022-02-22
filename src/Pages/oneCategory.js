@@ -7,6 +7,23 @@ export default function Category({ match }) {
   const [meals, setMeals] = useState([]);
   const [load, setLoad] = useState(false);
   const [isError, setisEerror] = useState(false);
+  const [searchTerm, setSearchTerm] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const getMeals = async () => {
+    try {
+      setLoading(true);
+      const result = await axios.get(
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`
+      );
+      setMeals(result.data.meals ? result.data.meals : []);
+      console.log(result);
+      // console.log(result.data);
+      // window.alert(JSON.stringify(meals));
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const getMeal = async () => {
     try {
@@ -26,9 +43,11 @@ export default function Category({ match }) {
     }
   };
 
+  console.log(meals);
   useEffect(() => {
     getMeal();
-  }, [match.params.category]);
+    getMeals();
+  }, [match.params.category, searchTerm]);
   return (
     <div
       style={{
@@ -37,7 +56,15 @@ export default function Category({ match }) {
         justifyContent: "space-between",
       }}
     >
-      {meals === null ? (
+      <div className="search">
+        <input
+          type="text"
+          placeholder="Search for meal..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
+      {meals.length === 0 ? (
         <h2>"Sorry, There is no meal with this category name"</h2>
       ) : (
         meals.map((el) => <MealscardC meal={el} key={el.idMeal} />)
