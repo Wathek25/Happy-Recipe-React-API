@@ -10,16 +10,16 @@ export default function Category({ match }) {
   const [searchTerm, setSearchTerm] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const getMeals = async () => {
+  const getMeals = async (value) => {
     try {
+      setSearchTerm(value);
+      if (!value.length) return getMeal();
       setLoading(true);
       const result = await axios.get(
-        `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=${value}`
       );
       setMeals(result.data.meals ? result.data.meals : []);
       console.log(result);
-      // console.log(result.data);
-      // window.alert(JSON.stringify(meals));
     } catch (error) {
       console.log(error);
     }
@@ -46,8 +46,8 @@ export default function Category({ match }) {
   console.log(meals);
   useEffect(() => {
     getMeal();
-    getMeals();
-  }, [match.params.category, searchTerm]);
+  }, [match.params.category]);
+
   return (
     <div
       style={{
@@ -61,7 +61,7 @@ export default function Category({ match }) {
           type="text"
           placeholder="Search for meal..."
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={(e) => getMeals(e.target.value)}
         />
       </div>
       {meals.length === 0 ? (
